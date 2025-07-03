@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+interface Params {
+  params: {
+    slug: string;
+  };
+}
+
 const beritaTerbaru = [
   {
     slug: "matsama-2025",
@@ -21,11 +27,7 @@ const beritaTerbaru = [
   },
 ];
 
-export default function BlogDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function BlogDetailPage({ params }: Params) {
   const berita = beritaTerbaru.find((b) => b.slug === params.slug);
 
   if (!berita) return notFound();
