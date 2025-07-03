@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/* 🌗 Custom Color Mode via CSS Variables */
+:root {
+  --font-sans: 'Arial', 'Helvetica', sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
