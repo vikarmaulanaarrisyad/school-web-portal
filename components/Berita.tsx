@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const beritaTerbaru = [
@@ -57,10 +58,13 @@ export default function BeritaSection() {
             key={berita.id}
             className="bg-white rounded shadow hover:shadow-lg transition overflow-hidden flex flex-col"
           >
-            <img
+            <Image
               src={berita.image}
               alt={berita.title}
-              className="w-full h-48 object-cover"
+              width={600}
+              height={300}
+              className="w-full h-48 object-cover rounded"
+              unoptimized // jika dari domain luar, tanpa harus daftarin di next.config.js
             />
             <div className="p-4 flex flex-col flex-grow">
               <span className="text-xs text-gray-500 mb-2">{berita.date}</span>
